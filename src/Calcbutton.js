@@ -3,7 +3,7 @@ import React from "react";
 function Calcbutton(props) {
   return (
     <div>
-      <button>{props.value} </button>
+      <button onClick={() => props.value}>{props.value} </button>
     </div>
   );
 }

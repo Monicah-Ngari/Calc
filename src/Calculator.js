@@ -4,7 +4,7 @@ import Calcbutton from "./Calcbutton";
 
 function Calculator() {
   const [display, setDisplay] = useState("0");
-  function handleDisplay(value) {}
+
   function handleValue(value) {
     setDisplay((prev) =>
       prev === "0" ? value.toString() : prev + value.toString()
@@ -18,8 +18,8 @@ function Calculator() {
   }
   return (
     <div className="Calculator">
-      <div className="Calculator-container" onClick={handleDisplay}>
-        <div className="Calculator-display">{display} </div>
+      <div className="Calculator-container">
+        <div className="Calculator-display">{display}</div>
 
         <Calcbutton value={7} onClick={handleValue} />
         <Calcbutton value={8} onClick={handleValue} />
@@ -37,7 +37,7 @@ function Calculator() {
 
         <Calcbutton value={1} onClick={handleValue} />
         <Calcbutton value={2} onClick={handleValue} />
-        <Calcbutton value={3} onClick="handleValue{handleValue}" />
+        <Calcbutton value={3} onClick={handleValue} />
         <Calcbutton
           className="operator"
           value={"+"}

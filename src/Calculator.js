@@ -46,12 +46,12 @@ function Calculator() {
 
         <Calcbutton value={"-"} onClick={hanldleOperator} />
         <Calcbutton value={0} onClick={handleValue} />
-        <Calcbutton value={"%"} onClick={hanldleOperator} />
         <Calcbutton
           className="operator"
-          value={"="}
-          onClick={hanldleOperator}
+          value={"/"}
+          onClick={() => handleOperator("/")}
         />
+        <Calcbutton className="operator" value={"="} onClick={handleEquals} />
       </div>
     </div>
   );

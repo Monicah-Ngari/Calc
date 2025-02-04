@@ -13,6 +13,15 @@ function Calculator() {
   function hanldleOperator(operator) {
     setDisplay((prev) => prev + " " + operator + " ");
   }
+  function handleEquals() {
+    try {
+      const result = eval(display);
+
+      setDisplay(result.toString());
+    } catch (error) {
+      setDisplay("Error");
+    }
+  }
   function handleClear() {
     setDisplay("0");
   }
@@ -32,7 +41,7 @@ function Calculator() {
         <Calcbutton
           className="operator"
           value={"*"}
-          onClick={hanldleOperator}
+          onClick={() => hanldleOperator("*")}
         />
 
         <Calcbutton value={1} onClick={handleValue} />
@@ -41,15 +50,15 @@ function Calculator() {
         <Calcbutton
           className="operator"
           value={"+"}
-          onClick={hanldleOperator}
+          onClick={() => hanldleOperator("+")}
         />
 
-        <Calcbutton value={"-"} onClick={hanldleOperator} />
+        <Calcbutton value={"-"} onClick={() => hanldleOperator("-")} />
         <Calcbutton value={0} onClick={handleValue} />
         <Calcbutton
           className="operator"
           value={"/"}
-          onClick={() => handleOperator("/")}
+          onClick={() => hanldleOperator("/")}
         />
         <Calcbutton className="operator" value={"="} onClick={handleEquals} />
       </div>
